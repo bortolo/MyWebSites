@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Visual Recognition Input</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/myFirstCss.css" />
+</head>
+<body>
+<h1>Welcome to the Watson Visual Recognition Demo on Node-RED</h1>
+    <h2>Select an image URL</h2>
+    <form  action="/visualresult">
+        <div id="imagelist">
+        <img src="https://raw.githubusercontent.com/watson-developer-cloud/visual-recognition-nodejs/master/public/images/samples/1.jpg" height='100'/>
+        <img src="https://raw.githubusercontent.com/watson-developer-cloud/visual-recognition-nodejs/master/public/images/samples/2.jpg" height='100'/>
+        <img src="https://raw.githubusercontent.com/watson-developer-cloud/visual-recognition-nodejs/master/public/images/samples/3.jpg" height='100'/>
+        <img src="https://raw.githubusercontent.com/watson-developer-cloud/visual-recognition-nodejs/master/public/images/samples/4.jpg" height='100'/>
+        </div>
+        <br/>Copy above image location URL or enter any image URL:<br/>
+        <input type="text" name="imageurl"/>
+        <input type="submit" value="Analyze"/>
+    </form>
+
+</body>
+</html>

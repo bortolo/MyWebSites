@@ -1,0 +1,9 @@
+<!-- https://www.nodeacademy.it/cose-ejs-template-engine-express-js/ -->
+<!-- https://ejs.co -->
+<h1>Sto per contare fino a <%= counter %></h1>
+
+<p><% for(var i=1;i<=counter;i++){%>
+  <%=i%>...
+  <%}%></p>
+
+  <p>Bene ho finito, adesso scelgo un nome a caso <%= names[Math.round(Math.random()*(names.length-1))]%></p>
