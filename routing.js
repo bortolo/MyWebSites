@@ -1,8 +1,7 @@
 // https://www.nodeacademy.it/cose-ejs-template-engine-express-js/
 var express = require('express');
 var app = express();
-
-var myfunctions = require('myfunctions');
+var VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3');
 var url = require('url');
 var querystring = require('querystring');
 
@@ -42,8 +41,18 @@ app.get("/visualresult",function(req,res){
     threshold: threshold
   };
 
-  myfunctions.callVisualRecognitionClassify(params);
-  res.render('visualrecresult.ejs',{imageurl: images_url});
+  var visualRecognition = new VisualRecognitionV3({
+    version: '2018-03-19',
+    iam_apikey: 'jW-NGRd2NQwhd_NVWgxKx-0jzEXtY6O3G0yy4KAk6jdu'
+  });
+
+  visualRecognition.classify(params, function(err, response) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('visualrecresult.ejs',{visualresult: response});
+    }
+  });
 });
 
 // Event handler appena parte la chiamata verso Visual Recognition service

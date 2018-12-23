@@ -7,7 +7,12 @@
 <body>
 <h1>Here you can see the results</h1>
 <div id="imagelist">
-<img src=<%= imageurl%> height='100'/>
+<img src=<%= visualresult.images[0].source_url %> height='100'/>
+<ul>
+    <% visualresult.images[0].classifiers[0].classes.forEach(function(obj) { %>
+        <li><%= obj.class %> - <%= obj.score %></li>
+    <% }); %>
+</ul>
 </div>
 </body>
 </html>
