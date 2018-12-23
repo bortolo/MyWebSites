@@ -7,7 +7,7 @@ var url = require('url');
 var querystring = require('querystring');
 
 // Per includere la cartella dove sono raccolti gli stili css
-app.use(express.static("/Users/andreabortolossi/WebSites/ExpressGenerator/public"));
+app.use(express.static("./public"));
 
 app.set('view engine', 'ejs');
 
@@ -41,7 +41,7 @@ app.get("/visualresult",function(req,res){
     owners: owners,
     threshold: threshold
   };
-  
+
   myfunctions.callVisualRecognitionClassify(params);
   res.render('visualrecresult.ejs',{imageurl: images_url});
 });
